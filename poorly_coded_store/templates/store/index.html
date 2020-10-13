@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Amadon</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-    <h1>Amadon Store!</h1>
-    <table>
+    <h1 class="h1 text-center">Amadon Store!</h1>
+    <table class="table table-dark table-striped table-bordered table-hover">
         <thead>
             <tr>
                 <th>Item</th>
@@ -20,16 +22,16 @@
         <tbody>
             {% for product in all_products %}
             <tr>
-                <form action="/checkout" method="post">
+                <form action="/calculations" method="post" class="form-group">
                     {% csrf_token %}
                     <td>{{product.description}}</td>
-                    <td><input type="hidden" name="price" value="{{product.price}}">{{product.price}}</td>
-                    <td><select name="quantity">
+                    <td><input type="hidden" name="product_id" value="{{product.id}}">{{product.price}}</td>
+                    <td><select name="quantity" class="form-control" id="dropdown">
                         <option value="1">1</option>              
                         <option value="2">2</option>              
                         <option value="3">3</option>              
                     </select></td>
-                    <td><input type="submit" value="Buy!"></td>
+                    <td><input type="submit" value="Buy!" class="btn btn-primary mb-2"></td>
                 </form>
             </tr>
             {% endfor %}

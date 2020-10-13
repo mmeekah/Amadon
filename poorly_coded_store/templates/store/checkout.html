@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Amadon</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <h3>Thank you for your business!</h3>
-    <p>We charged your credit card for $</p>
-    <p>You have ordered # items so far and spent $$ with Amadon.com!</p>
-    <p><a href="/">Go Back</a></p>
+    <h3 class="text-center">Thank you for your business!</h3>
+    <p class="lead text-center">We charged your credit card for ${{order.total_price}}</p>
+    <p class="lead text-center">You have ordered {{total_quantity_for_all_orders.quantity_ordered__sum}} items so far and spent ${{total_price_for_all_orders.total_price__sum}} with Amadon.com!</p>
+    <p class="lead text-center"><a href="/">Go Back</a></p>
 </body>
 </html>
